@@ -184,7 +184,45 @@
     <a href="#" class="btn">Book Your Trip</a>
   </div>
 </section>
+<section class="gallery">
 
+  <h2>Gallery</h2>
+
+  <div class="gallery-container">
+
+    <img src="images/nosybe.jpg" alt="Nosy Be">
+
+    <img src="images/tsingy.jpg" alt="Tsingy">
+
+    <img src="images/baobab.jpg" alt="Baobab">
+
+    <img src="images/lemur.jpg" alt="Lemur">
+
+  </div>
+
+</section>
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
 <div class="booking-box">
   <h2>Book Your Tour</h2>
 
