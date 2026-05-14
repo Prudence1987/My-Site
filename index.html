@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Madagascar Tours</title>
 
   <style>
@@ -22,6 +23,7 @@
     body{
       font-family:Arial,sans-serif;
       background:#f5f5f5;
+      color:#333;
     }
 
     /* ================= HERO ================= */
@@ -49,14 +51,28 @@
       padding:20px 40px;
     }
 
+    /* ================= LOGO ================= */
+
     .logo{
-      font-size:32px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:30px;
       font-weight:bold;
+    }
+
+    .logo img{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      object-fit:cover;
     }
 
     .logo span{
       color:#1e88e5;
     }
+
+    /* ================= MENU ================= */
 
     .menu a{
       color:white;
@@ -88,8 +104,8 @@
     }
 
     .hero-content p{
-      max-width:700px;
       font-size:20px;
+      max-width:700px;
       line-height:1.6;
     }
 
@@ -111,6 +127,10 @@
       transition:0.3s;
     }
 
+    .buttons a:hover{
+      transform:scale(1.05);
+    }
+
     .whatsapp{
       background:#25D366;
     }
@@ -119,11 +139,27 @@
       background:#1e88e5;
     }
 
-    .buttons a:hover{
-      transform:scale(1.05);
+    /* ================= SLIDER ================= */
+
+    .slider{
+      width:100%;
+      overflow:hidden;
+      margin-top:40px;
     }
 
-    /* ================= SECTION TITLE ================= */
+    .slides{
+      display:flex;
+    }
+
+    .slides img{
+      width:100%;
+      height:400px;
+      object-fit:cover;
+      min-width:100%;
+      transition:1s;
+    }
+
+    /* ================= TITLE ================= */
 
     .title{
       text-align:center;
@@ -136,27 +172,25 @@
       margin-bottom:10px;
     }
 
-    .title p{
-      color:#666;
-    }
-
     /* ================= GALLERY ================= */
 
     .gallery-container{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      grid-template-columns:
+      repeat(auto-fit,minmax(230px,1fr));
+
       gap:20px;
       padding:30px;
     }
 
     .gallery-container figure{
-      margin:0;
       background:white;
       border-radius:14px;
       overflow:hidden;
       box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      transition:0.3s;
       cursor:pointer;
+      transition:0.3s;
+      margin:0;
     }
 
     .gallery-container figure:hover{
@@ -171,10 +205,9 @@
     }
 
     figcaption{
-      padding:12px;
       text-align:center;
+      padding:12px;
       font-weight:bold;
-      color:#333;
     }
 
     /* ================= LIGHTBOX ================= */
@@ -186,9 +219,11 @@
       width:100%;
       height:100%;
       background:rgba(0,0,0,0.9);
+
       display:none;
       justify-content:center;
       align-items:center;
+
       z-index:999;
     }
 
@@ -237,6 +272,10 @@
         font-size:16px;
       }
 
+      .slides img{
+        height:250px;
+      }
+
     }
 
   </style>
@@ -248,29 +287,44 @@
 
   <header class="hero">
 
+    <!-- ================= NAVBAR ================= -->
+
     <nav>
 
       <div class="logo">
+
+        <img src="logo.png"
+        alt="Madagascar Tours Logo">
+
         Madagascar <span>Tours</span>
+
       </div>
 
       <div class="menu">
 
         <a href="#">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#gallery">
+        Gallery
+        </a>
+
+        <a href="#contact">
+        Contact
+        </a>
 
       </div>
 
     </nav>
+
+    <!-- ================= HERO CONTENT ================= -->
 
     <div class="hero-content">
 
       <h1>Discover Madagascar</h1>
 
       <p>
-        Explore beaches, wildlife and amazing landscapes
-        across Madagascar.
+        Explore beaches, wildlife and amazing
+        landscapes across Madagascar.
       </p>
 
       <div class="buttons">
@@ -278,12 +332,16 @@
         <a href="https://wa.me/261345169489"
         target="_blank"
         class="whatsapp">
+
         WhatsApp
+
         </a>
 
         <a href="booking.html"
         class="booking">
+
         Book Now
+
         </a>
 
       </div>
@@ -292,6 +350,40 @@
 
   </header>
 
+  <!-- ================= SLIDER ================= -->
+
+  <section class="slider">
+
+    <div class="slides">
+
+      <img src="photo1.JPG"
+      alt="Nosybe Beach">
+
+      <img src="photo2.JPG"
+      alt="Natural pool Isalo">
+
+      <img src="photo3.JPG"
+      alt="Baobab avenue">
+
+      <img src="photo4.JPG"
+      alt="Beautiful Landscape">
+
+      <img src="photo5.JPG"
+      alt="Giraffe Weelve">
+
+      <img src="photo6.JPG"
+      alt="Cap Sainte-Marie">
+
+      <img src="photo7.JPG"
+      alt="Tsingy de Bemaraha">
+
+      <img src="photo8.JPG"
+      alt="Indri Indri">
+
+    </div>
+
+  </section>
+
   <!-- ================= TITLE ================= -->
 
   <section class="title" id="gallery">
@@ -299,7 +391,7 @@
     <h2>Madagascar Gallery</h2>
 
     <p>
-      Explore beautiful places of Madagascar.
+      Explore beautiful places of Madagascar
     </p>
 
   </section>
@@ -309,42 +401,50 @@
   <div class="gallery-container">
 
     <figure onclick="openLightbox(this)">
-      <img src="photo1.JPG" alt="Nosybe Beach">
+      <img src="photo1.JPG"
+      alt="Nosybe Beach">
       <figcaption>Nosy Be Beach</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo2.JPG" alt="Natural pool Isalo">
+      <img src="photo2.JPG"
+      alt="Natural pool Isalo">
       <figcaption>Natural Pool Isalo</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo3.JPG" alt="Baobab avenue">
+      <img src="photo3.JPG"
+      alt="Baobab avenue">
       <figcaption>Avenue des Baobabs</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo4.JPG" alt="Beautiful Landscape">
+      <img src="photo4.JPG"
+      alt="Beautiful Landscape">
       <figcaption>Beautiful Landscape</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo5.JPG" alt="Giraffe Weelve">
+      <img src="photo5.JPG"
+      alt="Giraffe Weelve">
       <figcaption>Wild Nature</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo6.JPG" alt="Cap Sainte-Marie">
+      <img src="photo6.JPG"
+      alt="Cap Sainte-Marie">
       <figcaption>Cap Sainte-Marie</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo7.JPG" alt="Tsingy de Bemaraha">
+      <img src="photo7.JPG"
+      alt="Tsingy de Bemaraha">
       <figcaption>Tsingy de Bemaraha</figcaption>
     </figure>
 
     <figure onclick="openLightbox(this)">
-      <img src="photo8.JPG" alt="Indri Indri">
+      <img src="photo8.JPG"
+      alt="Indri Indri">
       <figcaption>Indri Indri Lemur</figcaption>
     </figure>
 
@@ -352,10 +452,13 @@
 
   <!-- ================= LIGHTBOX ================= -->
 
-  <div class="lightbox" id="lightbox"
+  <div class="lightbox"
+  id="lightbox"
   onclick="closeLightbox()">
 
-    <span class="close">&times;</span>
+    <span class="close">
+      &times;
+    </span>
 
     <img id="lightbox-img">
 
@@ -365,10 +468,13 @@
 
   <footer id="contact">
 
-    <p>WhatsApp: +261345169489</p>
+    <p>
+      WhatsApp:
+      +261345169489
+    </p>
 
     <p>
-      © 2026 Madagascar Tours - All Rights Reserved
+      © 2026 Madagascar Tours
     </p>
 
   </footer>
@@ -376,6 +482,34 @@
   <!-- ================= JAVASCRIPT ================= -->
 
   <script>
+
+    /* ===== SLIDER ===== */
+
+    const sliderImages =
+    document.querySelectorAll('.slides img');
+
+    let counter = 0;
+
+    setInterval(() => {
+
+      sliderImages.forEach((img) => {
+
+        img.style.transform =
+        `translateX(-${counter * 100}%)`;
+
+      });
+
+      counter++;
+
+      if(counter >= sliderImages.length){
+
+        counter = 0;
+
+      }
+
+    },3000);
+
+    /* ===== LIGHTBOX ===== */
 
     function openLightbox(element){
 
