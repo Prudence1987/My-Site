@@ -1,537 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tsara Dia Tours</title>
 
   <style>
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
-
-    body{
-      background:#f4f4f4;
-      color:#222;
-      line-height:1.6;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     /* HEADER */
-
-    header{
-      background:#0b6e4f;
-      color:white;
-      padding:20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:1000;
+    header {
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
 
-    header h1{
-      font-size:28px;
+    .logo img {
+      width: 90px;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      font-weight:bold;
-      transition:0.3s;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
     }
 
-    nav a:hover{
-      color:#90ee90;
+    header h1 {
+      margin: 5px 0;
+      font-size: 22px;
     }
 
-    /* HERO */
-
-    .hero{
-      height:85vh;
-      background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400') center/cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:white;
-      padding:20px;
+    /* MENU */
+    nav {
+      background: #023e8a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .hero-content{
-      background:rgba(0,0,0,0.5);
-      padding:40px;
-      border-radius:15px;
-      animation:fadeIn 1.5s ease;
+    nav a {
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
     }
 
-    .hero h2{
-      font-size:50px;
-      margin-bottom:15px;
+    nav a:hover {
+      background: #0096c7;
     }
 
-    .hero p{
-      font-size:20px;
-      margin-bottom:20px;
+    /* HERO (BACKGROUND) */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('images/bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    .btn{
-      display:inline-block;
-      background:#008cba;
-      color:white;
-      padding:14px 28px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:#006f94;
-    }
-
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+    .hero h2 {
+      font-size: 28px;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 10px;
     }
 
     /* SECTIONS */
-
-    section{
-      padding:70px 20px;
-      max-width:1200px;
-      margin:auto;
-    }
-
-    section h2{
-      text-align:center;
-      margin-bottom:35px;
-      color:#0b6e4f;
-      font-size:36px;
-    }
-
-    /* GRID */
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
+    section {
+      padding: 40px 20px;
+      text-align: center;
     }
 
     /* GALLERY */
-
-    .img-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 20px;
     }
 
-    .img-card img{
-      width:100%;
-      height:250px;
-      object-fit:cover;
-      transition:0.4s;
-      display:block;
+    .gallery-container img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
     }
 
-    .img-card:hover img{
-      transform:scale(1.1);
+    .gallery-container img:hover {
+      transform: scale(1.05);
     }
 
-    .img-card p{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      background:rgba(0,0,0,0.5);
-      color:white;
-      text-align:center;
-      padding:8px;
-      font-weight:bold;
+    /* WHATSAPP BUTTON */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* CARDS */
-
-    .card{
-      background:white;
-      padding:25px;
-      border-radius:12px;
-      text-align:center;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-    }
-
-    .card h3{
-      color:#008cba;
-      margin-bottom:10px;
-    }
-
-    /* BOOKING */
-
-    .booking-box{
-      max-width:450px;
-      margin:auto;
-      background:white;
-      padding:25px;
-      border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .booking-box input{
-      width:100%;
-      padding:12px;
-      margin:10px 0;
-      border-radius:6px;
-      border:1px solid #ccc;
-    }
-
-    .booking-box button{
-      width:100%;
-      padding:12px;
-      background:#25D366;
-      color:white;
-      border:none;
-      border-radius:6px;
-      cursor:pointer;
-      font-size:16px;
-      transition:0.3s;
-    }
-
-    .booking-box button:hover{
-      background:#1ebe5d;
-    }
-
-    /* MAP */
-
-    iframe{
-      border-radius:12px;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:#0b6e4f;
-      color:white;
-      text-align:center;
-      padding:25px;
-      margin-top:40px;
-    }
-
-    /* WHATSAPP FLOAT */
-
-    .whatsapp-float{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      width:60px;
-      height:60px;
-      background:#25D366;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      box-shadow:0 4px 12px rgba(0,0,0,0.3);
-      z-index:1000;
-      transition:0.3s;
-    }
-
-    .whatsapp-float:hover{
-      transform:scale(1.1);
-    }
-
-    .whatsapp-float img{
-      width:35px;
-      height:35px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      header{
-        flex-direction:column;
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 18px;
       }
 
-      nav{
-        margin-top:10px;
+      .hero h2 {
+        font-size: 20px;
       }
-
-      nav a{
-        margin:0 10px;
-      }
-
-      .hero h2{
-        font-size:36px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Tsara Dia Tours</h1>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Tsara Dia Tours">
+    </div>
+    <h1>Tsara Dia Tours</h1>
+  </header>
 
+  <!-- MENU -->
   <nav>
+    <a href="#home">Home</a>
+    <a href="#tours">Tours</a>
     <a href="#gallery">Gallery</a>
-    <a href="#packages">Packages</a>
-    <a href="#book">Booking</a>
     <a href="#contact">Contact</a>
   </nav>
-</header>
 
-<!-- HERO -->
-
-<section class="hero">
-
-  <div class="hero-content">
-    <h2>Explore Madagascar</h2>
-
-    <p>
-      Adventure, Nature & Unforgettable Experiences
-    </p>
-
-    <a href="#book" class="btn">
-      Book Your Trip
-    </a>
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <h2>Explore Madagascar miaraka aminay 🌍</h2>
   </div>
 
-</section>
+  <!-- TOURS -->
+  <section id="tours">
+    <h2>Nos Tours</h2>
+    <p>Voyages, plages, nature, aventure manerana an’i Madagascar 🇲🇬</p>
+  </section>
 
-<!-- GALLERY -->
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
 
-<section id="gallery">
-
-  <h2>Gallery</h2>
-
-  <div class="grid">
-
-  <div class="logo">
-   <img src="img/logo.png">       alt="Logo">
-   </div>
-
-    <div class="img-card">
-      <img src="photo1.JPG">
-      <p>Nosy Be</p>
+    <div class="gallery-container">
+      <img src="images/img1.jpg">
+      <img src="images/img2.jpg">
+      <img src="images/img3.jpg">
+      <img src="images/img4.jpg">
     </div>
+  </section>
 
-    <div class="img-card">
-      <img src="photo2.JPG">
-      <p>Andasibe</p>
-    </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Antsoy na WhatsApp izahay raha mila réservation.</p>
+  </section>
 
-    <div class="img-card">
-      <img src="photo3.jpeg">
-      <p>Tsingy</p>
-    </div>
-
-    <div class="img-card">
-      <img src="photo4.JPG">
-      <p>Madagascar Beach</p>
-    </div>
-    
-   <div class="img-card">
-    <img src="photo5.JPG">
-    <p>Baobab</p>
-   </div>
-    
-     <div class="img-card">
-      <img src="photo6.JPG">
-      <p>landscape</p>
-    </div>
-    
-     <div class="img-card">
-      <img src="photo7.JPG">
-      <p>lemur</p>
-    </div>
-    
-      <div class="img-card">
-      <img src="photo8.JPG">
-      <p>isalo</p>
-    </div>
-</section>
-
-<!-- PACKAGES -->
-
-<section id="packages">
-
-  <h2>Tour Packages</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Nosy Be Escape</h3>
-      <p>Beach holiday + snorkeling adventure</p>
-      <br>
-      <b>From $300</b>
-    </div>
-
-    <div class="card">
-      <h3>Andasibe Wildlife</h3>
-      <p>Discover lemurs and rainforest nature</p>
-      <br>
-      <b>From $180</b>
-    </div>
-
-    <div class="card">
-      <h3>Tsingy Adventure</h3>
-      <p>Explore Madagascar rock formations</p>
-      <br>
-      <b>From $250</b>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- BOOKING -->
-
-<section id="book">
-
-  <h2>Book Your Tour</h2>
-
-  <div class="booking-box">
-
-    <input type="text" id="name" placeholder="Your Name">
-
-    <input type="text" id="destination" placeholder="Destination">
-
-    <input type="date" id="date">
-
-    <input type="number" id="people" placeholder="Number of People">
-
-    <button onclick="sendWhatsApp()">
-      Send Booking
-    </button>
-
-  </div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section>
-
-  <h2>About Us</h2>
-
-  <p style="text-align:center; max-width:850px; margin:auto;">
-    Tsara Dia Tours is a Madagascar travel agency specialized in adventure,
-    wildlife, beaches and authentic local experiences across the Red Island.
-  </p>
-
-</section>
-
-<!-- MAP -->
-
-<section>
-
-  <h2>Find Us</h2>
-
-  <iframe
-    src="https://maps.google.com/maps?q=Antananarivo&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    width="100%"
-    height="350"
-    allowfullscreen>
-  </iframe>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-  <h2>Contact</h2>
-
-  <p style="text-align:center;">
-    WhatsApp: +261 34 51 694 89
-    <br><br>
-    Email: contact@tsaradiatours.com
-  </p>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-  © 2026 Tsara Dia Tours - Explore Madagascar Naturally
-</footer>
-
-<!-- WHATSAPP FLOAT -->
-
-<a
-  href="https://wa.me/261345169489"
-  class="whatsapp-float"
-  target="_blank">
-
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-
-</a>
-
-<!-- SCRIPT -->
-
-<script>
-
-function sendWhatsApp(){
-
-  let name =
-    document.getElementById("name").value;
-
-  let destination =
-    document.getElementById("destination").value;
-
-  let date =
-    document.getElementById("date").value;
-
-  let people =
-    document.getElementById("people").value;
-
-  let message =
-    "Hello Tsara Dia Tours,%0A%0A" +
-
-    "Name: " + name + "%0A" +
-
-    "Destination: " + destination + "%0A" +
-
-    "Date: " + date + "%0A" +
-
-    "People: " + people + "%0A%0A" +
-
-    "Please confirm availability.";
-
-  window.open(
-    "https://wa.me/261345169489?text=" + message,
-    "_blank"
-  );
-
-}
-
-</script>
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/261XXXXXXXX" target="_blank">
+    WhatsApp
+  </a>
 
 </body>
 </html>
