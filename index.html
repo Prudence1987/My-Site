@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Tsara Dia Tours</title>
 
   <style>
 
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family:Arial,sans-serif;
-      scroll-behavior:smooth;
       background:#f5f5f5;
+      scroll-behavior:smooth;
     }
 
     /* HEADER */
@@ -20,7 +29,8 @@
       background:linear-gradient(90deg,#0077b6,#00b4d8);
       color:white;
       text-align:center;
-      padding:15px;
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
     }
 
     .logo img{
@@ -43,10 +53,11 @@
 
     header h1{
       margin-top:10px;
-      font-size:28px;
+      font-size:30px;
+      letter-spacing:1px;
     }
 
-    /* MENU */
+    /* NAVIGATION */
 
     nav{
       background:#023e8a;
@@ -58,8 +69,9 @@
     nav a{
       color:white;
       text-decoration:none;
-      padding:14px 20px;
+      padding:15px 20px;
       transition:0.3s;
+      font-weight:bold;
     }
 
     nav a:hover{
@@ -69,7 +81,8 @@
     /* HERO */
 
     .hero{
-      height:70vh;
+      height:75vh;
+
       background:
       linear-gradient(rgba(0,0,0,0.4),
       rgba(0,0,0,0.4)),
@@ -84,40 +97,49 @@
     }
 
     .hero h2{
-      font-size:35px;
+      font-size:40px;
       background:rgba(0,0,0,0.4);
-      padding:15px;
-      border-radius:12px;
+      padding:20px;
+      border-radius:15px;
+      max-width:700px;
     }
 
     /* SECTION */
 
     section{
-      padding:50px 20px;
+      padding:60px 20px;
       text-align:center;
     }
 
     section h2{
       color:#0077b6;
       margin-bottom:20px;
+      font-size:32px;
+    }
+
+    section p{
+      max-width:800px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.7;
     }
 
     /* GALLERY */
 
     .gallery-container{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:15px;
-      padding:20px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-top:30px;
     }
 
     .gallery-container img{
       width:100%;
-      height:180px;
+      height:220px;
       object-fit:cover;
-      border-radius:12px;
-      transition:0.3s;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      border-radius:15px;
+      transition:0.4s;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
     }
 
     .gallery-container img:hover{
@@ -126,8 +148,13 @@
 
     /* CONTACT */
 
-    .contact p{
-      font-size:18px;
+    .contact-box{
+      background:white;
+      max-width:700px;
+      margin:auto;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
     }
 
     /* WHATSAPP */
@@ -139,10 +166,15 @@
       background:#25D366;
       color:white;
       text-decoration:none;
-      padding:15px 18px;
+      padding:15px 20px;
       border-radius:50px;
       font-weight:bold;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .whatsapp:hover{
+      transform:scale(1.1);
     }
 
     /* FOOTER */
@@ -151,25 +183,30 @@
       background:#023e8a;
       color:white;
       text-align:center;
-      padding:15px;
-      margin-top:30px;
+      padding:20px;
+      margin-top:40px;
     }
 
     /* RESPONSIVE */
 
-    @media(max-width:600px){
+    @media(max-width:768px){
 
       .hero h2{
-        font-size:24px;
+        font-size:28px;
       }
 
       header h1{
-        font-size:22px;
+        font-size:24px;
+      }
+
+      nav a{
+        padding:12px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
@@ -179,7 +216,9 @@
   <header>
 
     <div class="logo">
+
       <img src="logo.png" alt="Tsara Dia Tours Logo">
+
     </div>
 
     <h1>Tsara Dia Tours</h1>
@@ -191,8 +230,11 @@
   <nav>
 
     <a href="#home">Home</a>
+
     <a href="#tours">Tours</a>
+
     <a href="#gallery">Gallery</a>
+
     <a href="#contact">Contact</a>
 
   </nav>
@@ -201,7 +243,9 @@
 
   <div class="hero" id="home">
 
-    <h2>Explore Madagascar With Us 🌍</h2>
+    <h2>
+      Explore Madagascar With Us 🌍
+    </h2>
 
   </div>
 
@@ -212,7 +256,11 @@
     <h2>Our Tours</h2>
 
     <p>
-      Discover beaches, nature, adventure and unforgettable trips across Madagascar.
+
+      Discover beautiful beaches, breathtaking nature,
+      wildlife adventures and unforgettable travel experiences
+      across Madagascar.
+
     </p>
 
   </section>
@@ -223,43 +271,50 @@
 
     <h2>Gallery</h2>
 
-<div class="gallery-container">
+    <div class="gallery-container">
 
-  <img src="img1.JPG" alt="Madagascar Beach">
+      <img src="img1.JPG" alt="Madagascar Beach">
 
-  <img src="img2.JPG" alt="Nature Tour Madagascar">
+      <img src="img2.JPG" alt="Nature Tour Madagascar">
 
-  <img src="img3.JPG" alt="Adventure Trip">
+      <img src="img3.JPG" alt="Adventure Trip">
 
-  <img src="img4.JPG" alt="Beautiful Landscape">
+      <img src="img4.JPG" alt="Beautiful Landscape">
 
-  <img src="img5.JPG" alt="Travel Experience">
+      <img src="img5.JPG" alt="Travel Experience">
 
-  <img src="img6.JPG" alt="Island Tour">
+      <img src="img6.JPG" alt="Island Tour">
 
-  <img src="img7.JPG" alt="Safari Adventure">
+      <img src="img7.JPG" alt="Safari Adventure">
 
-  <img src="img8.JPG" alt="Tourist Destination">
+      <img src="img8.JPG" alt="Tourist Destination">
 
-</div>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
 
-  <section id="contact" class="contact">
+  <section id="contact">
 
     <h2>Contact Us</h2>
 
-    <p>
-      Contact us on WhatsApp for bookings and travel information.
-    </p>
+    <div class="contact-box">
+
+      <p>
+        Contact us on WhatsApp for bookings,
+        travel information and tour reservations.
+      </p>
+
+    </div>
 
   </section>
 
   <!-- WHATSAPP -->
 
-  <a class="whatsapp"
-  href="https://wa.me/261345169489"
+  <a
+  class="whatsapp"
+  href="https://wa.me/261XXXXXXXX"
   target="_blank">
 
     WhatsApp
@@ -275,4 +330,5 @@
   </footer>
 
 </body>
+
 </html>
