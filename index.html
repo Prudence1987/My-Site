@@ -350,10 +350,89 @@ button:hover{
 }
 
 </style>
+<section id="booking" class="booking-section">
 
+  <h2>Book Your Tour</h2>
+
+  <form id="#bookingForm">
+
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+
+    <input type="email" id="email" placeholder="Email">
+
+    <select id="tour" required>
+
+      <option value="">Choose Tour</option>
+
+      <option value="Nosy Be">Nosy Be</option>
+
+      <option value="Andasibe">Andasibe</option>
+
+      <option value="Isalo">Isalo</option>
+
+    </select>
+
+    <input type="date" id="date" required>
+
+    <textarea id="message" placeholder="Extra Message"></textarea>
+
+    <button type="submit">Confirm Booking</button>
+
+  </form>
+
+</section>
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+
+  let phone = document.getElementById("phone").value;
+
+  let email = document.getElementById("email").value;
+
+  let tour = document.getElementById("tour").value;
+
+  let date = document.getElementById("date").value;
+
+  let message = document.getElementById("message").value;
+
+  let text =
+
+`BOOKING REQUEST
+
+Name: ${name}
+
+Phone: ${phone}
+
+Email: ${email}
+
+Tour: ${tour}
+
+Date: ${date}
+
+Message: ${message}`;
+
+  let url =
+
+"https://wa.me/261345169589?text=" + encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+});
+
+</script>
+
+</body>
+
+</html>
 </head>
 
-<body>
 
   <!-- ================= HERO ================= -->
 
